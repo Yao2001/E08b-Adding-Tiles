@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Tile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/tile_gray.png" type="Texture" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.86, 16.809 )
+
+[node name="Tiles" type="Node"]
+
+[node name="Gray Tiles" type="Node" parent="."]
+
+[node name="Tile" type="StaticBody2D" parent="Gray Tiles"]
+editor/display_folded = true
+position = Vector2( 95.14, 343.118 )
+physics_material_override = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Gray Tiles/Tile"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gray Tiles/Tile"]
+shape = SubResource( 2 )
+
+[node name="Red Tiles" type="Node" parent="."]
